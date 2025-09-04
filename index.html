@@ -410,28 +410,12 @@
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
         
-        /* Responsive Banner-style Advertisement Section */
+        /* Compact Banner Section - New Design */
         .ad-banner {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             position: relative;
+            padding: 25px 0;
             overflow: hidden;
-        }
-        
-        /* Desktop: 300px height, Tablet: 250px, Mobile: 200px */
-        .ad-banner {
-            height: 300px;
-        }
-        
-        @media (max-width: 768px) {
-            .ad-banner {
-                height: 250px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .ad-banner {
-                height: 200px;
-            }
         }
         
         .ad-banner::before {
@@ -449,35 +433,26 @@
         .ad-banner-content {
             position: relative;
             z-index: 2;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .ad-banner-inner {
-            width: 100%;
             max-width: 1200px;
-            position: relative;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .ad-slides {
             position: relative;
-            /* Desktop: 220px, Tablet: 180px, Mobile: 130px */
-            height: 220px;
+            height: 180px;
             overflow: hidden;
         }
         
         @media (max-width: 768px) {
             .ad-slides {
-                height: 180px;
+                height: 160px;
             }
         }
         
         @media (max-width: 480px) {
             .ad-slides {
-                height: 130px;
+                height: 140px;
             }
         }
         
@@ -490,7 +465,6 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            padding: 0 20px;
         }
         
         .ad-slide.active {
@@ -500,63 +474,52 @@
         .ad-slide-content {
             display: flex;
             align-items: center;
-            gap: 40px;
-            max-width: 1000px;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
             width: 100%;
         }
         
-        /* Responsive adjustments for mobile */
         @media (max-width: 768px) {
             .ad-slide-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 20px;
+                gap: 15px;
+                padding: 15px;
             }
         }
         
         .ad-slide-icon {
-            /* Desktop: 100x100, Tablet: 80x80, Mobile: 60x60 */
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        @media (max-width: 768px) {
-            .ad-slide-icon {
-                width: 80px;
-                height: 80px;
-            }
         }
         
         @media (max-width: 480px) {
             .ad-slide-icon {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
         }
         
         .ad-slide-icon i {
-            /* Desktop: 50px, Tablet: 40px, Mobile: 30px */
-            font-size: 50px;
+            font-size: 30px;
             color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .ad-slide-icon i {
-                font-size: 40px;
-            }
         }
         
         @media (max-width: 480px) {
             .ad-slide-icon i {
-                font-size: 30px;
+                font-size: 24px;
             }
         }
         
@@ -565,44 +528,42 @@
         }
         
         .ad-slide-title {
-            /* Desktop: 36px, Tablet: 28px, Mobile: 22px */
-            font-size: 36px;
-            font-weight: 800;
+            font-size: 24px;
+            font-weight: 700;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         @media (max-width: 768px) {
             .ad-slide-title {
-                font-size: 28px;
-                margin-bottom: 8px;
+                font-size: 20px;
+                margin-bottom: 4px;
             }
         }
         
         @media (max-width: 480px) {
             .ad-slide-title {
-                font-size: 22px;
-                margin-bottom: 6px;
+                font-size: 18px;
+                margin-bottom: 3px;
             }
         }
         
         .ad-slide-description {
-            /* Desktop: 20px, Tablet: 18px, Mobile: 16px */
-            font-size: 20px;
-            color: #dbeafe;
-            line-height: 1.4;
+            font-size: 16px;
+            color: #e0f2fe;
+            line-height: 1.3;
         }
         
         @media (max-width: 768px) {
             .ad-slide-description {
-                font-size: 18px;
-                line-height: 1.3;
+                font-size: 14px;
+                line-height: 1.2;
             }
         }
         
         @media (max-width: 480px) {
             .ad-slide-description {
-                font-size: 16px;
+                font-size: 13px;
                 line-height: 1.2;
             }
         }
@@ -614,30 +575,22 @@
         
         .ad-indicators {
             position: absolute;
-            bottom: 15px;
+            bottom: 10px;
             left: 0;
             right: 0;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             z-index: 3;
         }
         
         .ad-indicator {
-            /* Desktop: 12x12, Mobile: 10x10 */
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
-        }
-        
-        @media (max-width: 480px) {
-            .ad-indicator {
-                width: 10px;
-                height: 10px;
-            }
         }
         
         .ad-indicator.active {
@@ -950,94 +903,92 @@
             </div>
         </div>
     </section>
-    <!-- Responsive Banner-style Advertisement Section -->
+    <!-- Compact Banner Section - New Design -->
     <section class="ad-banner">
         <div class="ad-banner-content">
-            <div class="ad-banner-inner">
-                <div class="ad-slides">
-                    <!-- Slide 1: Unmatched Safety -->
-                    <div class="ad-slide active">
-                        <div class="ad-slide-content">
-                            <div class="ad-slide-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="ad-slide-text">
-                                <h3 class="ad-slide-title">Unmatched Safety</h3>
-                                <p class="ad-slide-description">
-                                    <span class="ad-slide-highlight">100% Safety Record</span> with advanced monitoring systems across Andhra Pradesh and Telangana
-                                </p>
-                            </div>
+            <div class="ad-slides">
+                <!-- Slide 1: Unmatched Safety -->
+                <div class="ad-slide active">
+                    <div class="ad-slide-content">
+                        <div class="ad-slide-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                    </div>
-                    
-                    <!-- Slide 2: Energy Efficient -->
-                    <div class="ad-slide">
-                        <div class="ad-slide-content">
-                            <div class="ad-slide-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <div class="ad-slide-text">
-                                <h3 class="ad-slide-title">Energy Efficient</h3>
-                                <p class="ad-slide-description">
-                                    Reduce energy consumption by up to <span class="ad-slide-highlight">40%</span> while maintaining superior performance
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3: 24/7 Service Support -->
-                    <div class="ad-slide">
-                        <div class="ad-slide-content">
-                            <div class="ad-slide-icon">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div class="ad-slide-text">
-                                <h3 class="ad-slide-title">24/7 Service Support</h3>
-                                <p class="ad-slide-description">
-                                    Round-the-clock maintenance and emergency response teams in <span class="ad-slide-highlight">all 12 cities</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4: Industry Recognition -->
-                    <div class="ad-slide">
-                        <div class="ad-slide-content">
-                            <div class="ad-slide-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="ad-slide-text">
-                                <h3 class="ad-slide-title">Industry Recognition</h3>
-                                <p class="ad-slide-description">
-                                    <span class="ad-slide-highlight">5-time</span> "Best Vertical Transport Solutions Provider" award winner
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 5: Expert Team -->
-                    <div class="ad-slide">
-                        <div class="ad-slide-content">
-                            <div class="ad-slide-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="ad-slide-text">
-                                <h3 class="ad-slide-title">Expert Team</h3>
-                                <p class="ad-slide-description">
-                                    <span class="ad-slide-highlight">Highly skilled</span> engineers with specialized training in latest technologies
-                                </p>
-                            </div>
+                        <div class="ad-slide-text">
+                            <h3 class="ad-slide-title">Unmatched Safety</h3>
+                            <p class="ad-slide-description">
+                                <span class="ad-slide-highlight">100% Safety Record</span> with advanced monitoring systems across Andhra Pradesh and Telangana
+                            </p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="ad-indicators">
-                    <div class="ad-indicator active" data-slide="0"></div>
-                    <div class="ad-indicator" data-slide="1"></div>
-                    <div class="ad-indicator" data-slide="2"></div>
-                    <div class="ad-indicator" data-slide="3"></div>
-                    <div class="ad-indicator" data-slide="4"></div>
+                <!-- Slide 2: Energy Efficient -->
+                <div class="ad-slide">
+                    <div class="ad-slide-content">
+                        <div class="ad-slide-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="ad-slide-text">
+                            <h3 class="ad-slide-title">Energy Efficient</h3>
+                            <p class="ad-slide-description">
+                                Reduce energy consumption by up to <span class="ad-slide-highlight">40%</span> while maintaining superior performance
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Slide 3: 24/7 Service Support -->
+                <div class="ad-slide">
+                    <div class="ad-slide-content">
+                        <div class="ad-slide-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="ad-slide-text">
+                            <h3 class="ad-slide-title">24/7 Service Support</h3>
+                            <p class="ad-slide-description">
+                                Round-the-clock maintenance and emergency response teams in <span class="ad-slide-highlight">all 12 cities</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4: Industry Recognition -->
+                <div class="ad-slide">
+                    <div class="ad-slide-content">
+                        <div class="ad-slide-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="ad-slide-text">
+                            <h3 class="ad-slide-title">Industry Recognition</h3>
+                            <p class="ad-slide-description">
+                                <span class="ad-slide-highlight">5-time</span> "Best Vertical Transport Solutions Provider" award winner
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5: Expert Team -->
+                <div class="ad-slide">
+                    <div class="ad-slide-content">
+                        <div class="ad-slide-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="ad-slide-text">
+                            <h3 class="ad-slide-title">Expert Team</h3>
+                            <p class="ad-slide-description">
+                                <span class="ad-slide-highlight">Highly skilled</span> engineers with specialized training in latest technologies
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ad-indicators">
+                <div class="ad-indicator active" data-slide="0"></div>
+                <div class="ad-indicator" data-slide="1"></div>
+                <div class="ad-indicator" data-slide="2"></div>
+                <div class="ad-indicator" data-slide="3"></div>
+                <div class="ad-indicator" data-slide="4"></div>
             </div>
         </div>
     </section>
