@@ -66,6 +66,7 @@
         .hero-content {
             position: relative;
             z-index: 10;
+            padding-bottom: 120px; /* Space for stats on mobile */
         }
         
         .hero-badge {
@@ -155,68 +156,53 @@
             50% { transform: translateY(-40px) rotate(10deg); }
         }
         
-        /* Minimalist Stats Overlay */
+        /* Redesigned Stats Section */
         .hero-stats {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
             backdrop-filter: blur(10px);
-            padding: 30px 0;
+            padding: 20px 0;
             z-index: 15;
         }
         
-        .hero-stats-container {
+        .stats-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
-        .hero-stat {
+        .stat-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            color: white;
+            text-align: center;
+            padding: 10px 5px;
+            min-width: 80px;
         }
         
-        .hero-stat i {
+        .stat-icon {
             font-size: 20px;
             color: #fbbf24;
+            margin-bottom: 6px;
         }
         
-        .hero-stat-text {
-            font-size: 16px;
-            font-weight: 600;
-        }
-        
-        .hero-stat-value {
+        .stat-value {
             font-size: 18px;
             font-weight: 800;
-            color: #fbbf24;
-            margin-right: 5px;
+            color: #ffffff;
+            line-height: 1;
         }
         
-        @media (max-width: 768px) {
-            .hero-stats-container {
-                gap: 25px;
-            }
-            
-            .hero-stat i {
-                font-size: 18px;
-            }
-            
-            .hero-stat-text {
-                font-size: 14px;
-            }
-            
-            .hero-stat-value {
-                font-size: 16px;
-            }
+        .stat-label {
+            font-size: 12px;
+            color: #e0e7ff;
+            margin-top: 5px;
         }
         
         /* Enhanced Cities Section with Background */
@@ -769,62 +755,63 @@
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
         
-        /* Mobile Floating Action Buttons */
-        .mobile-fab-container {
+        /* Mobile Action Buttons */
+        .mobile-action-buttons {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            padding: 15px;
             display: none;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
         
-        .mobile-fab {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .mobile-buttons-container {
             display: flex;
+            justify-content: space-around;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .mobile-action-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 12px;
             transition: all 0.3s ease;
             text-decoration: none;
+            color: white;
+            font-weight: 600;
+            margin: 0 5px;
         }
         
-        .fab-primary {
+        .mobile-btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        .fab-secondary {
+        .mobile-btn-secondary {
             background: #25D366;
         }
         
-        .mobile-fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        .mobile-action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .fab-label {
-            position: absolute;
-            right: 70px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
+        .mobile-btn-icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-btn-text {
             font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .mobile-fab:hover .fab-label {
-            opacity: 1;
         }
         
         /* Responsive Styles */
@@ -834,9 +821,62 @@
                 display: none;
             }
             
-            /* Show mobile floating buttons */
-            .mobile-fab-container {
-                display: flex;
+            /* Show mobile action buttons */
+            .mobile-action-buttons {
+                display: block;
+            }
+            
+            /* Adjust hero content for mobile */
+            .hero-content {
+                padding-bottom: 180px; /* More space for stats and mobile buttons */
+            }
+            
+            /* Improve stats layout for mobile */
+            .stats-container {
+                justify-content: space-between;
+                padding: 0 10px;
+            }
+            
+            .stat-item {
+                min-width: 70px;
+                padding: 8px 3px;
+            }
+            
+            .stat-icon {
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+            
+            .stat-value {
+                font-size: 16px;
+            }
+            
+            .stat-label {
+                font-size: 11px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-container {
+                gap: 5px;
+            }
+            
+            .stat-item {
+                min-width: 60px;
+                padding: 5px 2px;
+            }
+            
+            .stat-icon {
+                font-size: 16px;
+                margin-bottom: 3px;
+            }
+            
+            .stat-value {
+                font-size: 14px;
+            }
+            
+            .stat-label {
+                font-size: 10px;
             }
         }
     </style>
@@ -889,6 +929,7 @@
             </div>
         </div>
     </nav>
+    
     <!-- Hero Section -->
     <section id="home" class="flex items-center relative overflow-hidden hero-bg">
         <!-- Floating Icons -->
@@ -934,51 +975,57 @@
             </div>
         </div>
         
-        <!-- Minimalist Stats Overlay -->
+        <!-- Redesigned Stats Section -->
         <div class="hero-stats">
-            <div class="hero-stats-container">
-                <div class="hero-stat">
-                    <i class="fas fa-star"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">4.9/5</span> Rating
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
                     </div>
+                    <div class="stat-value">4.9/5</div>
+                    <div class="stat-label">Rating</div>
                 </div>
                 
-                <div class="hero-stat">
-                    <i class="fas fa-certificate"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">✓</span> ISO Certified
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
+                    <div class="stat-value">✓</div>
+                    <div class="stat-label">ISO Certified</div>
                 </div>
                 
-                <div class="hero-stat">
-                    <i class="fas fa-flag"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">
-                            <i class="fas fa-map-marker-alt" style="font-size: 16px;"></i>
-                        </span> Make in India
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-flag"></i>
                     </div>
+                    <div class="stat-value">
+                        <i class="fas fa-map-marker-alt" style="font-size: 16px;"></i>
+                    </div>
+                    <div class="stat-label">Make in India</div>
                 </div>
                 
-                <div class="hero-stat">
-                    <i class="fas fa-project-diagram"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">500+</span> Projects
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
                     </div>
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label">Projects</div>
                 </div>
                 
-                <div class="hero-stat">
-                    <i class="fas fa-chart-line"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">99.8%</span> Uptime
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
+                    <div class="stat-value">99.8%</div>
+                    <div class="stat-label">Uptime</div>
                 </div>
                 
-                <div class="hero-stat">
-                    <i class="fas fa-headset"></i>
-                    <div class="hero-stat-text">
-                        <span class="hero-stat-value">24/7</span> Support
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Support</div>
                 </div>
             </div>
         </div>
@@ -1071,6 +1118,7 @@
             </div>
         </div>
     </section>
+    
     <!-- Improved Mobile-First Banner Section -->
     <section class="ad-banner">
         <div class="ad-banner-content">
@@ -1143,16 +1191,18 @@
         </div>
     </section>
     
-    <!-- Mobile Floating Action Buttons -->
-    <div class="mobile-fab-container">
-        <a href="#products" class="mobile-fab fab-primary" style="position: relative;">
-            <i class="fas fa-arrow-right"></i>
-            <span class="fab-label">Explore Products</span>
-        </a>
-        <a href="tel:+919876543210" class="mobile-fab fab-secondary" style="position: relative;">
-            <i class="fas fa-phone"></i>
-            <span class="fab-label">Get a Quote</span>
-        </a>
+    <!-- Mobile Action Buttons -->
+    <div class="mobile-action-buttons">
+        <div class="mobile-buttons-container">
+            <a href="#products" class="mobile-action-btn mobile-btn-primary">
+                <i class="fas fa-arrow-right mobile-btn-icon"></i>
+                <span class="mobile-btn-text">Explore Products</span>
+            </a>
+            <a href="tel:+919876543210" class="mobile-action-btn mobile-btn-secondary">
+                <i class="fas fa-phone mobile-btn-icon"></i>
+                <span class="mobile-btn-text">Get a Quote</span>
+            </a>
+        </div>
     </div>
     
     <!-- Contact Popup Modal -->
@@ -1185,6 +1235,7 @@
             </div>
         </div>
     </div>
+    
     <script>
         // Show contact popup after 2 seconds
         window.addEventListener('load', () => {
