@@ -155,6 +155,70 @@
             50% { transform: translateY(-40px) rotate(10deg); }
         }
         
+        /* Minimalist Stats Overlay */
+        .hero-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 30px 0;
+            z-index: 15;
+        }
+        
+        .hero-stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+        
+        .hero-stat i {
+            font-size: 20px;
+            color: #fbbf24;
+        }
+        
+        .hero-stat-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .hero-stat-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-right: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-stats-container {
+                gap: 25px;
+            }
+            
+            .hero-stat i {
+                font-size: 18px;
+            }
+            
+            .hero-stat-text {
+                font-size: 14px;
+            }
+            
+            .hero-stat-value {
+                font-size: 16px;
+            }
+        }
+        
         /* Enhanced Cities Section with Background */
         .cities-section {
             background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0f4ff 100%);
@@ -798,7 +862,57 @@
                 </button>
             </div>
         </div>
+        
+        <!-- Minimalist Stats Overlay -->
+        <div class="hero-stats">
+            <div class="hero-stats-container">
+                <div class="hero-stat">
+                    <i class="fas fa-star"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">4.9/5</span> Rating
+                    </div>
+                </div>
+                
+                <div class="hero-stat">
+                    <i class="fas fa-certificate"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">✓</span> ISO Certified
+                    </div>
+                </div>
+                
+                <div class="hero-stat">
+                    <i class="fas fa-flag"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">
+                            <i class="fas fa-map-marker-alt" style="font-size: 16px;"></i>
+                        </span> Make in India
+                    </div>
+                </div>
+                
+                <div class="hero-stat">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">500+</span> Projects
+                    </div>
+                </div>
+                
+                <div class="hero-stat">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">99.8%</span> Uptime
+                    </div>
+                </div>
+                
+                <div class="hero-stat">
+                    <i class="fas fa-headset"></i>
+                    <div class="hero-stat-text">
+                        <span class="hero-stat-value">24/7</span> Support
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
     <!-- Enhanced Cities Section with Background -->
     <section class="cities-section">
         <div class="cities-content container mx-auto px-6">
