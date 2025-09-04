@@ -768,6 +768,77 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
+        
+        /* Mobile Floating Action Buttons */
+        .mobile-fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+        }
+        
+        .mobile-fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .fab-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .fab-secondary {
+            background: #25D366;
+        }
+        
+        .mobile-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .fab-label {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .mobile-fab:hover .fab-label {
+            opacity: 1;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Hide desktop buttons on mobile */
+            .hero-buttons {
+                display: none;
+            }
+            
+            /* Show mobile floating buttons */
+            .mobile-fab-container {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -1071,6 +1142,19 @@
             </div>
         </div>
     </section>
+    
+    <!-- Mobile Floating Action Buttons -->
+    <div class="mobile-fab-container">
+        <a href="#products" class="mobile-fab fab-primary" style="position: relative;">
+            <i class="fas fa-arrow-right"></i>
+            <span class="fab-label">Explore Products</span>
+        </a>
+        <a href="tel:+919876543210" class="mobile-fab fab-secondary" style="position: relative;">
+            <i class="fas fa-phone"></i>
+            <span class="fab-label">Get a Quote</span>
+        </a>
+    </div>
+    
     <!-- Contact Popup Modal -->
     <div id="contactPopup" class="popup-overlay">
         <div class="popup-content">
