@@ -22,17 +22,18 @@
         }
         
         .nav-sticky {
-            background: linear-gradient(90deg, rgba(102, 126, 234, 0.98) 0%, rgba(118, 75, 162, 0.98) 100%);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .nav-sticky .nav-link {
-            color: white !important;
+            color: #4b5563 !important;
         }
         
         .nav-sticky .nav-link:hover {
-            color: #fbbf24 !important;
+            color: #7c3aed !important;
         }
         
         .gradient-text {
@@ -152,6 +153,308 @@
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-40px) rotate(10deg); }
+        }
+        
+        /* Enhanced Cities Section with Background */
+        .cities-section {
+            background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0f4ff 100%);
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        
+        .cities-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(118, 75, 162, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.02) 0%, transparent 40%);
+            z-index: 1;
+        }
+        
+        .cities-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.4;
+            z-index: 0;
+        }
+        
+        .cities-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cities-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .cities-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.7);
+            color: #4b5563;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cities-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .cities-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .states-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .state-block {
+            text-align: center;
+        }
+        
+        .state-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .state-name::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .city-chip {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 30px;
+            padding: 12px 20px;
+            font-weight: 600;
+            color: #4b5563;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .city-chip:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .city-chip i {
+            font-size: 14px;
+        }
+        
+        .expansion-banner {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .expansion-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .expansion-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Banner-style Advertisement Section */
+        .ad-banner {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .ad-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .ad-banner-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-banner-inner {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .ad-slides {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .ad-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .ad-slide.active {
+            opacity: 1;
+        }
+        
+        .ad-slide-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1000px;
+        }
+        
+        .ad-slide-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .ad-slide-icon i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .ad-slide-text {
+            flex: 1;
+        }
+        
+        .ad-slide-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .ad-slide-description {
+            font-size: 20px;
+            color: #dbeafe;
+            line-height: 1.4;
+        }
+        
+        .ad-slide-highlight {
+            color: #fbbf24;
+            font-weight: 700;
+        }
+        
+        .ad-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .ad-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ad-indicator.active {
+            background: white;
+            transform: scale(1.2);
         }
         
         /* Popup Styles */
@@ -374,6 +677,186 @@
         </div>
     </section>
 
+    <!-- Enhanced Cities Section with Background -->
+    <section class="cities-section">
+        <div class="cities-content container mx-auto px-6">
+            <div class="cities-header">
+                <div class="cities-badge">
+                    <i class="fas fa-map-marked-alt mr-2"></i> Our Service Areas
+                </div>
+                <h2 class="cities-title">Serving <span class="gradient-text">12 Major Cities</span> Across Two States</h2>
+                <p class="cities-subtitle">
+                    We're proud to provide our world-class vertical transportation solutions to major cities in Andhra Pradesh and Telangana.
+                </p>
+            </div>
+            
+            <div class="states-container">
+                <!-- Andhra Pradesh -->
+                <div class="state-block">
+                    <h3 class="state-name">Andhra Pradesh</h3>
+                    <div class="cities-grid">
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Visakhapatnam</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Amaravati</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Vijayawada</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tirupati</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kakinada</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Guntur</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Telangana -->
+                <div class="state-block">
+                    <h3 class="state-name">Telangana</h3>
+                    <div class="cities-grid">
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hyderabad</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Warangal</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Karimnagar</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Nizamabad</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Khammam</span>
+                        </div>
+                        <div class="city-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mahabubnagar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="expansion-banner">
+                <div class="expansion-text">
+                    <div class="expansion-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <span>Expanding to 20+ more cities by 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner-style Advertisement Section -->
+    <section class="ad-banner">
+        <div class="ad-banner-content">
+            <div class="ad-banner-inner">
+                <div class="ad-slides">
+                    <!-- Slide 1: Unmatched Safety -->
+                    <div class="ad-slide active">
+                        <div class="ad-slide-content">
+                            <div class="ad-slide-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="ad-slide-text">
+                                <h3 class="ad-slide-title">Unmatched Safety</h3>
+                                <p class="ad-slide-description">
+                                    <span class="ad-slide-highlight">100% Safety Record</span> with advanced monitoring systems across Andhra Pradesh and Telangana
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Energy Efficient -->
+                    <div class="ad-slide">
+                        <div class="ad-slide-content">
+                            <div class="ad-slide-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="ad-slide-text">
+                                <h3 class="ad-slide-title">Energy Efficient</h3>
+                                <p class="ad-slide-description">
+                                    Reduce energy consumption by up to <span class="ad-slide-highlight">40%</span> while maintaining superior performance
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: 24/7 Service Support -->
+                    <div class="ad-slide">
+                        <div class="ad-slide-content">
+                            <div class="ad-slide-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="ad-slide-text">
+                                <h3 class="ad-slide-title">24/7 Service Support</h3>
+                                <p class="ad-slide-description">
+                                    Round-the-clock maintenance and emergency response teams in <span class="ad-slide-highlight">all 12 cities</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Industry Recognition -->
+                    <div class="ad-slide">
+                        <div class="ad-slide-content">
+                            <div class="ad-slide-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="ad-slide-text">
+                                <h3 class="ad-slide-title">Industry Recognition</h3>
+                                <p class="ad-slide-description">
+                                    <span class="ad-slide-highlight">5-time</span> "Best Vertical Transport Solutions Provider" award winner
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5: Expert Team -->
+                    <div class="ad-slide">
+                        <div class="ad-slide-content">
+                            <div class="ad-slide-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="ad-slide-text">
+                                <h3 class="ad-slide-title">Expert Team</h3>
+                                <p class="ad-slide-description">
+                                    <span class="ad-slide-highlight">Highly skilled</span> engineers with specialized training in latest technologies
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ad-indicators">
+                    <div class="ad-indicator active" data-slide="0"></div>
+                    <div class="ad-indicator" data-slide="1"></div>
+                    <div class="ad-indicator" data-slide="2"></div>
+                    <div class="ad-indicator" data-slide="3"></div>
+                    <div class="ad-indicator" data-slide="4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Popup Modal -->
     <div id="contactPopup" class="popup-overlay">
         <div class="popup-content">
@@ -426,14 +909,62 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Navbar Scroll Effect
+        // Navbar Scroll Effect - Improved
+        let lastScrollTop = 0;
+        
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
                 navbar.classList.add('nav-sticky');
             } else {
                 navbar.classList.remove('nav-sticky');
             }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Banner Advertisement Functionality
+        const slides = document.querySelectorAll('.ad-slide');
+        const indicators = document.querySelectorAll('.ad-indicator');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all indicators
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+            
+            // Show the current slide
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            
+            // Update current slide index
+            currentSlide = index;
+        }
+        
+        // Function to show next slide
+        function nextSlide() {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+        
+        // Auto-advance the banner every 4 seconds
+        setInterval(nextSlide, 4000);
+        
+        // Add click event to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+            });
         });
     </script>
 </body>
