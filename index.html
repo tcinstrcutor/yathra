@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YATHRA Solutions - Elevating India's Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Source Code Protection */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Enhanced Navigation */
+        .nav-logo {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-sticky {
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.98) 0%, rgba(118, 75, 162, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-sticky .nav-link {
+            color: white !important;
+        }
+        
+        .nav-sticky .nav-link:hover {
+            color: #fbbf24 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Enhanced Hero Section */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            line-height: 1.05;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 24px;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.7rem);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-metric {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 16px 24px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            margin: 0 10px 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-metric:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .hero-btn {
+            padding: 18px 36px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-icon {
+            position: absolute;
+            opacity: 0.08;
+            animation: float 25s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-40px) rotate(10deg); }
+        }
+        
+        /* Enhanced Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Enhanced Section Styles */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #6b7280;
+            max-width: 3xl;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        /* Enhanced Product Cards */
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -40px auto 30px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .product-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .product-content {
+            padding: 0 2rem 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Enhanced Industry Cards */
+        .industry-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .industry-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .industry-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .industry-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+        
+        .industry-card:hover .industry-overlay {
+            opacity: 1;
+        }
+        
+        .industry-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: white;
+            z-index: 2;
+        }
+        
+        /* Enhanced News Cards */
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .news-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 14px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9fafb;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+        
+        /* Enhanced Footer */
+        .footer {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.05;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 4px 0;
+        }
+        
+        .footer-link:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+        
+        /* Utility Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .counter {
+            transition: all 0.5s ease;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* Notification Toast */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 18px 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            min-width: 300px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-icon {
+            margin-right: 16px;
+            font-size: 1.8rem;
+        }
+        
+        .notification.success .notification-icon {
+            color: #10B981;
+        }
+        
+        .notification.error .notification-icon {
+            color: #EF4444;
+        }
+        
+        /* Contact Popup Modal */
+        .contact-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-popup.show .popup-content {
+            transform: scale(1);
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-close:hover {
+            background: #e5e7eb;
+            transform: rotate(90deg);
+        }
+        
+        .popup-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .popup-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .popup-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .popup-btn {
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .popup-btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        
+        .popup-btn-whatsapp:hover {
+            background: #20b958;
+            transform: translateY(-2px);
+        }
+        
+        .popup-btn-call {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .popup-btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-metric {
+                margin: 0 5px 15px;
+                padding: 12px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .hero-btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .feature-card, .product-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .popup-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Notification Toast -->
+    <div id="notification" class="notification">
+        <i class="notification-icon fas fa-check-circle"></i>
+        <div>
+            <div class="font-semibold">Success!</div>
+            <div class="text-sm text-gray-600">Your message has been sent.</div>
+        </div>
+    </div>
+
+    <!-- Contact Popup Modal -->
+    <div id="contactPopup" class="contact-popup">
+        <div class="popup-content">
+            <div class="popup-close" onclick="closeContactPopup()">
+                <i class="fas fa-times text-gray-600"></i>
+            </div>
+            
+            <div class="popup-icon">
+                <i class="fas fa-comments text-white text-3xl"></i>
+            </div>
+            
+            <h3 class="popup-title">Need Assistance?</h3>
+            <p class="popup-subtitle">
+                Get in touch with our experts for quick consultation and solutions.
+            </p>
+            
+            <div class="popup-buttons">
+                <a href="https://wa.me/919876543210?text=Hi%20YATHRA%20Solutions,%20I'm%20interested%20in%20your%20elevator%20and%20escalator%20solutions." 
+                   target="_blank" class="popup-btn popup-btn-whatsapp">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    Chat on WhatsApp
+                </a>
+                
+                <a href="tel:+919876543210" class="popup-btn popup-btn-call">
+                    <i class="fas fa-phone text-xl"></i>
+                    Call Now: +91 98765 43210
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up text-white text-xl"></i>
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3 nav-logo">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-building text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold gradient-text">YATHRA</span>
+                        <span class="text-lg text-gray-600 font-medium">Solutions</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">About</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Products</a>
+                    <a href="#industries" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Industries</a>
+                    <a href="#news" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">News</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Contact</a>
+                    <button class="btn-primary text-white px-6 py-2.5 rounded-full font-medium">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-purple-600 font-medium py-2">About</a>
+                <a href="#products" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Products</a>
+                <a href="#industries" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Industries</a>
+                <a href="#news" class="block text-gray-700 hover:text-purple-600 font-medium py-2">News</a>
+                <a href="#contact" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Contact</a>
+                <button class="btn-primary text-white px-6 py-2.5 rounded-full font-medium w-full">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Enhanced Design -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden hero-bg">
+        <!-- Floating Icons -->
+        <i class="fas fa-elevator floating-icon text-white text-9xl" style="top: 15%; left: 8%;"></i>
+        <i class="fas fa-stairs floating-icon text-white text-9xl" style="top: 65%; right: 8%; animation-delay: 8s;"></i>
+        <i class="fas fa-building floating-icon text-white text-9xl" style="top: 35%; right: 15%; animation-delay: 15s;"></i>
+        
+        <div class="hero-content container mx-auto px-6 text-center text-white">
+            <div class="hero-badge">
+                <i class="fas fa-award mr-3 text-yellow-300"></i> India's Premier Vertical Transport Solutions
+            </div>
+            
+            <h1 class="hero-title">
+                Elevating <span class="text-yellow-300">India's Future</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Modern elevators, escalators & mobility solutions — engineered for safety, efficiency & architectural excellence.
+            </p>
+            
+            <div class="flex flex-wrap justify-center">
+                <div class="hero-metric">
+                    <i class="fas fa-check-circle text-green-400 mr-3 text-xl"></i>
+                    <span class="font-medium">25+ Years Experience</span>
+                </div>
+                <div class="hero-metric">
+                    <i class="fas fa-map-marker-alt text-green-400 mr-3 text-xl"></i>
+                    <span class="font-medium">50+ Cities Nationwide</span>
+                </div>
+                <div class="hero-metric">
+                    <i class="fas fa-shield-alt text-green-400 mr-3 text-xl"></i>
+                    <span class="font-medium">100% Safety Record</span>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="hero-btn btn-primary text-white">
+                    <i class="fas fa-arrow-right mr-3"></i> Explore Products
+                </button>
+                <button class="hero-btn border-2 border-white text-white hover:bg-white hover:text-purple-600">
+                    <i class="fas fa-phone-alt mr-3"></i> Get a Quote
+                </button>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Yathta Section - Enhanced -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center mb-20">
+                <h2 class="section-title gradient-text">Who We Are</h2>
+                <p class="section-subtitle">
+                    YATHRA Solutions is India's leading provider of vertical transportation systems. 
+                    With nationwide service and cutting-edge engineering, we deliver safe, efficient, 
+                    and aesthetically pleasing elevators and escalators for every need.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-5xl font-bold gradient-text counter" data-target="500">0</div>
+                    <div class="text-gray-600 mt-3 font-semibold text-lg">Projects</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold gradient-text counter" data-target="50">0</div>
+                    <div class="text-gray-600 mt-3 font-semibold text-lg">Cities</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold gradient-text counter" data-target="15">0</div>
+                    <div class="text-gray-600 mt-3 font-semibold text-lg">Service Teams</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold gradient-text counter" data-target="100">0</div>
+                    <div class="text-gray-600 mt-3 font-semibold text-lg">% Safety Record</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Products Section - Enhanced -->
+    <section id="products" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Our <span class="gradient-text">Products</span></h2>
+                <p class="section-subtitle">
+                    Comprehensive vertical transportation solutions for every application
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Passenger Elevators</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Smooth, quiet, and efficient passenger elevators designed for comfort and safety in residential and commercial buildings.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-box text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Freight Elevators</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Heavy-duty freight elevators built to transport goods, equipment, and materials with maximum durability and reliability.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-hospital text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Hospital Elevators</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Specialized hospital elevators with spacious cabins, smooth operation, and hygiene features for healthcare environments.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-stairs text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Escalators</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            High-capacity, energy-efficient escalators for shopping malls, airports, metro stations, and public spaces.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-walking text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Moving Walkways</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Efficient moving walkways for airports, transit hubs, and large facilities to enhance pedestrian flow.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card card-hover fade-in">
+                    <div class="product-icon">
+                        <i class="fas fa-tools text-white text-2xl"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="text-2xl font-bold mb-4">Maintenance Services</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed flex-grow">
+                            Comprehensive maintenance and modernization services to ensure optimal performance and longevity.
+                        </p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Yathta Section - Enhanced -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Why <span class="gradient-text">YATHRA</span></h2>
+                <p class="section-subtitle">
+                    Setting the standard in vertical transportation across India
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Safety-First Engineering</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Exceeding international safety standards with advanced monitoring systems
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-map-marked-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pan-India Presence</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Service centers across 50+ cities ensuring prompt support nationwide
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-leaf text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Energy-Efficient Technology</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Innovative designs reducing energy consumption by up to 40%
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-headset text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Service Support</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Round-the-clock maintenance and emergency response across India
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve Section - Enhanced -->
+    <section id="industries" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Industries We <span class="gradient-text">Serve</span></h2>
+                <p class="section-subtitle">
+                    Specialized solutions for every vertical transportation need
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Residential">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Residential</h3>
+                        <p class="text-white/90">Space-efficient elevators for apartments and housing complexes</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-home text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Residential Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1486406146927-c427a8a36f22?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Commercial">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Commercial</h3>
+                        <p class="text-white/90">High-performance elevators for office buildings and corporate spaces</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-building text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Commercial Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1489599843091-30c0b5d7ce48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Malls">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Malls</h3>
+                        <p class="text-white/90">High-capacity escalators and elevators for shopping centers</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-shopping-cart text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Retail Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Airports">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Airports & Metro</h3>
+                        <p class="text-white/90">Robust solutions for high-traffic transportation hubs</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-plane text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Transportation Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hospitals">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Hospitals</h3>
+                        <p class="text-white/90">Specialized elevators for healthcare facilities and medical centers</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-hospital text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Healthcare Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="industry-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Industrial">
+                    <div class="industry-content">
+                        <h3 class="text-2xl font-bold text-white mb-2">Industrial</h3>
+                        <p class="text-white/90">Heavy-duty freight elevators for manufacturing and logistics</p>
+                    </div>
+                    <div class="industry-overlay">
+                        <div class="text-white text-center p-4">
+                            <i class="fas fa-industry text-5xl mb-3"></i>
+                            <p class="text-xl font-semibold">Industrial Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section - Enhanced -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Our <span class="gradient-text">Vision</span></h2>
+                <p class="section-subtitle">
+                    To Elevate India Across 100+ Cities
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-12 leading-relaxed text-xl">
+                    At YATHRA Solutions, we're committed to transforming India's vertical transportation landscape. 
+                    Our vision is to bring world-class elevator and escalator solutions to every corner of the country, 
+                    enhancing urban mobility and architectural excellence.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-map-pin text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">100+ Cities</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Expanding our nationwide presence
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-handshake text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Strategic Partnerships</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Building relationships with top developers
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-lightbulb text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Innovation</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Pioneering future mobility solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section - Enhanced -->
+    <section id="news" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Latest <span class="gradient-text">News</span></h2>
+                <p class="section-subtitle">
+                    Stay updated with our latest innovations and industry insights
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="News 1">
+                        <div class="news-date">May 15, 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="text-xl font-bold mb-3">YATHRA Launches Energy-Efficient Elevator Line</h3>
+                        <p class="text-gray-600 mb-4 flex-grow">Our new line of elevators reduces energy consumption by 40% while maintaining superior performance...</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="News 2">
+                        <div class="news-date">April 28, 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="text-xl font-bold mb-3">Award for Safety Excellence</h3>
+                        <p class="text-gray-600 mb-4 flex-grow">YATHRA Solutions receives national recognition for maintaining 100% safety record across all installations...</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card fade-in">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="News 3">
+                        <div class="news-date">April 10, 2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="text-xl font-bold mb-3">Expansion to 10 New Cities</h3>
+                        <p class="text-gray-600 mb-4 flex-grow">YATHRA announces expansion of service centers to 10 new cities across India, enhancing our nationwide presence...</p>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center mt-auto">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section - Enhanced -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="section-title">Building <span class="gradient-text">Partnerships</span></h2>
+                <p class="section-subtitle">
+                    We are building partnerships with top real estate & infrastructure companies
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg p-8 flex items-center justify-center h-44 fade-in hover:shadow-xl transition-all hover:scale-105">
+                    <span class="text-xl font-semibold text-gray-700">Real Estate Developers</span>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg p-8 flex items-center justify-center h-44 fade-in hover:shadow-xl transition-all hover:scale-105">
+                    <span class="text-xl font-semibold text-gray-700">Infrastructure Companies</span>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg p-8 flex items-center justify-center h-44 fade-in hover:shadow-xl transition-all hover:scale-105">
+                    <span class="text-xl font-semibold text-gray-700">Architectural Firms</span>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg p-8 flex items-center justify-center h-44 fade-in hover:shadow-xl transition-all hover:scale-105">
+                    <span class="text-xl font-semibold text-gray-700">Government Bodies</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Enhanced -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Looking for elevators & escalators for your project?
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                    Get in touch with our experts for a consultation and customized solution for your vertical transportation needs.
+                </p>
+            </div>
+            
+            <div class="contact-form max-w-4xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Name *</label>
+                            <input type="text" required class="form-input" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Company</label>
+                            <input type="text" class="form-input" placeholder="Company name">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                            <input type="email" required class="form-input" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone *</label>
+                            <input type="tel" required class="form-input" placeholder="+91 98765 43210">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Project Details</label>
+                        <textarea rows="5" class="form-input" placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold w-full">
+                        Request a Quote
+                    </button>
+                </form>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-phone-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Call Us</div>
+                                <div class="text-gray-600">+91 98765 43210</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Email Us</div>
+                                <div class="text-gray-600">info@yathrasolutions.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Visit Us</div>
+                                <div class="text-gray-600">Mumbai, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Enhanced -->
+    <footer class="footer py-16">
+        <div class="container mx-auto px-6">
+            <div class="footer-content grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="footer-logo">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-building text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">YATHRA</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed mt-4">
+                        Elevating India's future with innovative vertical transportation solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="footer-link text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="footer-link text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#products" class="footer-link text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#contact" class="footer-link text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Passenger Elevators</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Freight Elevators</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Hospital Elevators</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Escalators</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-purple-400"></i>
+                            <span class="text-gray-400">123 Business Park, Mumbai, India</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-purple-400"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-purple-400"></i>
+                            <span class="text-gray-400">info@yathrasolutions.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 YATHRA Solutions. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show contact popup after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('contactPopup').classList.add('show');
+            }, 3000); // Show after 3 seconds
+        });
+
+        // Close contact popup
+        function closeContactPopup() {
+            document.getElementById('contactPopup').classList.remove('show');
+        }
+
+        // Source Code Protection
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showNotification('Source code viewing is disabled!', 'error');
+            return false;
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.keyCode === 123 || 
+                (e.ctrlKey && e.shiftKey && e.keyCode === 73) || 
+                (e.ctrlKey && e.shiftKey && e.keyCode === 74) || 
+                (e.ctrlKey && e.keyCode === 85)) {
+                e.preventDefault();
+                showNotification('Developer tools are disabled!', 'error');
+                return false;
+            }
+        });
+        
+        // Notification System
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const icon = notification.querySelector('.notification-icon');
+            
+            // Update notification content
+            notification.querySelector('div div').textContent = type === 'success' ? 'Success!' : 'Error!';
+            notification.querySelector('div div:last-child').textContent = message;
+            
+            // Update notification class and icon
+            notification.className = 'notification ' + type;
+            if (type === 'success') {
+                icon.className = 'notification-icon fas fa-check-circle';
+            } else {
+                icon.className = 'notification-icon fas fa-exclamation-circle';
+            }
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-sticky');
+            } else {
+                navbar.classList.remove('nav-sticky');
+            }
+            
+            // Show/Hide Back to Top Button
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Back to Top Functionality
+        document.getElementById('backToTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Fade In Animation on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const countUp = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => countUp(counter), 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    countUp(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            showNotification('Thank you for your inquiry! We will get back to you soon.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
