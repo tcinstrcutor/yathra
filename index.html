@@ -768,19 +768,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
-        
-        /* Navigation Mobile Responsiveness */
-        .nav-get-quote {
-            padding: 12px 20px !important;
-            font-size: 14px !important;
-        }
-        
-        @media (max-width: 640px) {
-            .nav-get-quote {
-                padding: 10px 16px !important;
-                font-size: 13px !important;
-            }
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -805,7 +792,7 @@
                     <a href="#industries" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Industries</a>
                     <a href="#news" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">News</a>
                     <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 transition font-medium">Contact</a>
-                    <button class="btn-primary text-white nav-get-quote rounded-full font-medium">
+                    <button class="btn-primary text-white px-6 py-2.5 rounded-full font-medium">
                         Get Quote
                     </button>
                 </div>
@@ -825,13 +812,12 @@
                 <a href="#industries" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Industries</a>
                 <a href="#news" class="block text-gray-700 hover:text-purple-600 font-medium py-2">News</a>
                 <a href="#contact" class="block text-gray-700 hover:text-purple-600 font-medium py-2">Contact</a>
-                <button class="btn-primary text-white nav-get-quote rounded-full font-medium w-full">
+                <button class="btn-primary text-white px-6 py-2.5 rounded-full font-medium w-full">
                     Get Quote
                 </button>
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section id="home" class="flex items-center relative overflow-hidden hero-bg">
         <!-- Floating Icons -->
@@ -877,7 +863,6 @@
             </div>
         </div>
     </section>
-
     <!-- Enhanced Cities Section with Background -->
     <section class="cities-section">
         <div class="cities-content container mx-auto px-6">
@@ -965,7 +950,6 @@
             </div>
         </div>
     </section>
-
     <!-- Responsive Banner-style Advertisement Section -->
     <section class="ad-banner">
         <div class="ad-banner-content">
@@ -1057,7 +1041,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Popup Modal -->
     <div id="contactPopup" class="popup-overlay">
         <div class="popup-content">
@@ -1075,7 +1058,7 @@
             </p>
             
             <div class="popup-buttons">
-                <a href="https://wa.me/919876543210?text=Hi%20YATHRA%20Solutions,%20I'm%20interested%20in%20your%20elevator%20and%20escalator%20solutions." 
+                <a href="https://wa.me/919876543210?text=Hi%20YATHRA%20Solutions,%20I'm%20interested%20in%20your%elevator%20and%20escalator%20solutions." 
                    target="_blank" class="popup-btn popup-btn-whatsapp">
                     <i class="fab fa-whatsapp text-xl"></i>
                     Chat on WhatsApp
@@ -1088,7 +1071,6 @@
             </div>
         </div>
     </div>
-
     <script>
         // Show contact popup after 2 seconds
         window.addEventListener('load', () => {
@@ -1167,6 +1149,34 @@
                 showSlide(index);
             });
         });
+        
+        // Add touch support for mobile swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const adSlidesContainer = document.querySelector('.ad-slides');
+        
+        adSlidesContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        adSlidesContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left - next slide
+                nextSlide();
+            }
+            
+            if (touchEndX > touchStartX + 50) {
+                // Swipe right - previous slide
+                const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(prev);
+            }
+        }
     </script>
 </body>
 </html>
